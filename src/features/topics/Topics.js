@@ -1,8 +1,8 @@
 import NewTopicForm from "../../components/NewTopicForm";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
-import selectTopics from "./topicsSlice";
-import { useSelector } from "react/redux";
+import { useSelector } from "react-redux";
+import { selectTopics } from "./topicsSlice";
 
 export default function Topics() {
   const topics = useSelector(selectTopics); // replace this with a call to your selector to select all the topics in state

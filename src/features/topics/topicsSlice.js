@@ -1,11 +1,11 @@
-//imports
-import { createAction, createSlice } from '@reduxjs/toolkit';
+// import createSlice from redux toolkit
+import { createSlice } from "@reduxjs/toolkit";
 
-//slice creator
+//create slice and action
 export const topicsSlice = createSlice({
     name: 'topics',
     initialState: {
-        topics: {}
+        topics: {},
     },
     reducers: {
         addTopic: (state, action) => {
@@ -17,8 +17,11 @@ export const topicsSlice = createSlice({
             }
             state.topics[action.payload.id] = newTopic;
         },
-    },
-})
+    }
+});
 
-//create selector for topics object nested in initialState
-export const selectTopics = state => state.topics.topics;
+
+//export topic selection and action
+export const selectTopics = (state) => state.topics.topics;
+export const { addTopic } = topicsSlice.actions;
+export default topicsSlice.reducer;
