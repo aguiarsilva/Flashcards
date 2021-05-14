@@ -6,7 +6,7 @@ import { addQuizId } from "../topics/topicsSlice";
 const quizzesSlice = createSlice({
     name: 'quizzes',
     initialState: {
-        quizzes: {}
+        quizzes: {},
     },
     reducers: {
         addQuiz: (state, action) => {
@@ -14,7 +14,7 @@ const quizzesSlice = createSlice({
             id: action.payload.id, 
             name: action.payload.name,
             topicId: action.payload.topicId,
-            cardsIds: action.payload.cardsIds
+            cardIds: action.payload.cardIds
         }
             state.quizzes[action.payload.id] = newQuiz;
         }
