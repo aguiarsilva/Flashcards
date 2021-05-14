@@ -1,5 +1,6 @@
 //import createSlice
 import { createSlice } from "@reduxjs/toolkit";
+import { addQuizId } from "../topics/topicsSlice";
 
 //create slice and action
 const quizzesSlice = createSlice({
@@ -20,6 +21,16 @@ const quizzesSlice = createSlice({
     }
 });
 
+//action creator with thunk that dispatches 2 actions one after another
+export const addQuizIdAndQuiz = (payload) => {
+    return (dispatch) => {
+        dispatch(addQuizId(payload));
+        dispatch(addQuiz({topicId: payload.topicId, id: payload.id}));
+    }
+};
+
+
+//exports from selector, action and reducer
 export const selectQuiz = (state) => state.quizzes.quizzes;
 export const { addQuiz } = quizzesSlice.actions;
 export default quizzesSlice.reducers;
