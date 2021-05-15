@@ -31,6 +31,6 @@ export const addQuizIdAndQuiz = (payload) => {
 
 
 //exports from selector, action and reducer
-export const selectQuizzes = (state) => state.quizzes.quizzes;
+export const selectQuizzes = state => state.quizzes.quizzes;
 export const { addQuiz } = quizzesSlice.actions;
 export default quizzesSlice.reducers;
