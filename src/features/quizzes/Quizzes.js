@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
 import { useSelector } from "react-redux";
-import { selectQuizzes } from "./quizzesSlice";
+import { selectQuizzes } from "./quizzesSlice.js";
 
 
 export default function Quizzes() {

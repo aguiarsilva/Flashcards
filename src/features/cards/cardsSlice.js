@@ -13,7 +13,7 @@ export const cardsSlice = createSlice({
                 id: action.payload.id,
                 front: action.payload.front,
                 back: action.payload.back
-            }
+            };
             state.cards[action.payload.id] = newCard;
         }
     }
